@@ -15,7 +15,11 @@ export class HomeComponent {
     this.name = "John";
     this.lastName = "Doe";
     this.message = "Enter your name";
-    this.isDisabled = true;
+    this.isDisabled = false;
+  }
+
+  sayHello(): void {
+    console.log(`Hello ${this.name} ${this.lastName}`);
+    
   }
 }
-
