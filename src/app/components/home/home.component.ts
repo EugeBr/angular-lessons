@@ -9,11 +9,13 @@ export class HomeComponent {
   name: string;
   lastName: string;
   message: string;
+  isDisabled: boolean;
 
   constructor() {
     this.name = "John";
     this.lastName = "Doe";
     this.message = "Enter your name";
+    this.isDisabled = true;
   }
 }
 
