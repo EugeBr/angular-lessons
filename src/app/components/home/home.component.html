@@ -1,5 +1,10 @@
 <h1>Home Page</h1>
-<p>Hi {{ name }} {{ lastName }}</p>
+<p *ngIf="name.length">Hi {{ name }} {{ lastName }}</p>
 
-<input type="text" [placeholder]="message">
+<input type="text" [placeholder]="message" [(ngModel)]="name">
+<input type="text" placeholder="Write your lastname" [(ngModel)]="lastName">
 <button [disabled]="isDisabled" (click)="sayHello()">Submit</button>
+
+<div *ngIf="isPepe()">
+   <p [ngStyle]="{'background-color': 'red', 'font-size.px': secretMessageFontSize}">Secret message</p> 
+</div>
