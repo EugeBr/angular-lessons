@@ -1,0 +1,13 @@
+<h1>Shopping list</h1>
+<ul>
+  <li *ngFor="let item of shoppingList">
+    {{ item }}
+  </li>
+</ul>
+
+<!-- with index -->
+<ul>
+    <li *ngFor="let item of shoppingList; let i = index">
+      {{ i+1 }} - {{ item }}
+    </li>
+  </ul>
