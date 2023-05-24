@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ShoppingItem } from 'src/app/models/shopping-item.model';
 
 @Component({
   selector: 'app-shopping-list',
@@ -6,9 +7,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./shopping-list.component.css']
 })
 export class ShoppingListComponent {
-  shoppingList: string[];
+  shoppingList: ShoppingItem[] = [];
+  itemName: string;
+  itemAmount: number;
  
   constructor() {
-    this.shoppingList = ["milk", "coffee", "cheese"];
+    this.itemName = "";
+    this.itemAmount = 0;
+    this.shoppingList.push(new ShoppingItem("milk", 2));
+    this.shoppingList.push(new ShoppingItem("eggs", 12));
+    this.shoppingList.push(new ShoppingItem("cookies", 10));
+    this.shoppingList.push(new ShoppingItem("bread", 1));
+  }
+
+  addShoppingItem() {
+    const item = new ShoppingItem(this.itemName, this.itemAmount);
+    this.shoppingList.push(item);
+    // to clear form
+    this.itemName = "";
+    this.itemAmount = 0;
   }
 }
